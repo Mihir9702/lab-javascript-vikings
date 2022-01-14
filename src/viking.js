@@ -64,7 +64,7 @@ class War {
     this.saxonArmy[randSaxon].receiveDamage(this.vikingArmy[randViking].strength);
 
     if (this.saxonArmy[randSaxon].health <= 0) {
-      this.saxonArmy.pop(this.saxonArmy[randSaxon]);
+      this.saxonArmy.splice(randSaxon);
       return "A Saxon has died in combat";
     }
   }
@@ -75,7 +75,7 @@ class War {
     this.vikingArmy[randViking].receiveDamage(this.saxonArmy[randSaxon].strength);
 
     if (this.vikingArmy[randViking].health <= 0) {
-      this.vikingArmy.pop(this.vikingArmy[randViking]);
+      this.vikingArmy.splice(randViking);
     } else {
       return `${this.vikingArmy[randViking].name} has received ${this.saxonArmy[randSaxon].strength} points of damage`;
     }
@@ -89,8 +89,8 @@ class War {
     } else {
       return "Vikings and Saxons are still in the thick of battle.";
     }
-
   }
+
 }
 
 
